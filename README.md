@@ -1,0 +1,28 @@
+# mongoose-imei
+
+Gives you the `Imei` type to use in your schemas, complete with validation using [node-imei](https://github.com/B2MSolutions/node-imei) library. https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity
+
+## Usage
+
+Start with an `npm install --save mongoose-iban`
+
+```javascript
+const mongoose = require('mongoose');
+const imei = require('mongoose-imei');
+
+const Schema = mongoose.Schema;
+
+imei.loadType(mongoose);
+
+const PhoneSchema = new Schema({
+  phone: { type: Schema.Types.Imei }
+});
+
+const PhoneModel = mongoose.model('Phone', PhoneSchema);
+
+const phone = new PhoneModel({
+  imei: '351680077319519',
+});
+```
+
+This type will validate the entry and return an error if a wrong value is given.

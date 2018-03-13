@@ -1,0 +1,56 @@
+{
+  "name": "mongoose-imei",
+  "version": "1.0.0",
+  "description": "Mongoose type for IMEI",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teslitsky/mongoose-imei.git"
+  },
+  "keywords": [
+    "mongoose",
+    "imei"
+  ],
+  "files": [
+    "README.md",
+    "index.js",
+    "lib",
+    "test"
+  ],
+  "author": "Dmitry Teslitsky <dmitryteslitsky@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teslitsky/mongoose-imei/issues"
+  },
+  "homepage": "https://github.com/teslitsky/mongoose-imei#readme",
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "dependencies": {
+    "imei": "0.0.1"
+  },
+  "devDependencies": {
+    "ava": "0.25.0",
+    "eslint": "4.18.2",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.9.0",
+    "mockgoose": "7.3.5",
+    "mongoose": "^5.0.10",
+    "prettier": "1.11.1"
+  }
+}
