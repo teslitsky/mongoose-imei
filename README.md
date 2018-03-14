@@ -6,7 +6,7 @@ Gives you the `Imei` type to use in your schemas, complete with validation using
 
 ## Usage
 
-Start with an `npm install --save mongoose-iban`
+Start with an `npm install --save mongoose-imei`
 
 ```javascript
 const mongoose = require('mongoose');
