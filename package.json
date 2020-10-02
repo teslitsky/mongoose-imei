@@ -4,7 +4,7 @@
   "description": "Mongoose type for IMEI",
   "main": "index.js",
   "scripts": {
-    "test": "ava tests/*.js"
+    "test": "jest tests/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,8 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "jest": true
     },
     "extends": [
       "airbnb-base",
@@ -44,11 +45,12 @@
     "imei": "0.0.1"
   },
   "devDependencies": {
-    "ava": "3.13.0",
+    "@types/jest": "26.0.14",
     "eslint": "7.10.0",
     "eslint-config-airbnb-base": "14.2.0",
     "eslint-config-prettier": "6.12.0",
     "eslint-plugin-import": "2.22.1",
+    "jest": "26.4.2",
     "mockgoose": "8.0.4",
     "mongoose": "5.10.7",
     "prettier": "2.1.2"
