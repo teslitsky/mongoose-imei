@@ -1,25 +1,28 @@
+const { MongoMemoryServer } = require('mongodb-memory-server');
 const mongoose = require('mongoose');
-const { Mockgoose } = require('mockgoose');
 const ImeiModule = require('../index.js');
 
-const mockgoose = new Mockgoose(mongoose);
-
-ImeiModule.loadType(mongoose);
 const { Schema } = mongoose;
 
-const { Imei } = Schema.Types;
-const SampleSchema = new Schema({ imei: { type: Imei } });
-const SampleModel = mongoose.model('Sample', SampleSchema);
+jest.setTimeout(30000);
 
-jest.setTimeout(60000);
+const mongod = new MongoMemoryServer();
+let SampleModel;
 
 describe('Mongoose IMEI', () => {
   beforeAll(async () => {
-    await mockgoose.prepareStorage();
-    await mongoose.connect('mongodb://localhost/test', {
+    const uri = await mongod.getUri();
+
+    await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
+
+    ImeiModule.loadType(mongoose);
+
+    const { Imei } = Schema.Types;
+    const SampleSchema = new Schema({ imei: { type: Imei } });
+    SampleModel = mongoose.model('Sample', SampleSchema);
   });
 
   it('should exists loadType() function', () => {
@@ -39,13 +42,13 @@ describe('Mongoose IMEI', () => {
 
   it('should stores the proper IMEI value without any validation errors', async () => {
     const imei = '351680077319519';
-    const Model = new SampleModel({ imei });
-    const result = await Model.save();
+    const sampleModel = new SampleModel({ imei });
+    const result = await sampleModel.save();
     expect(result.imei).toEqual(imei);
   });
 
   afterAll(async () => {
     await mongoose.disconnect();
-    await mockgoose.shutdown();
+    await mongod.stop();
   });
 });
