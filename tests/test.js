@@ -1,4 +1,4 @@
-const { test } = require('ava');
+const test = require('ava');
 const mongoose = require('mongoose');
 const { Mockgoose } = require('mockgoose');
 const ImeiModule = require('../index.js');
@@ -14,7 +14,10 @@ const SampleModel = mongoose.model('Sample', SampleSchema);
 
 test.before(async () => {
   await mockgoose.prepareStorage();
-  await mongoose.connect('mongodb://localhost/test');
+  await mongoose.connect('mongodb://localhost/test', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 });
 
 test('loadType() function exists', (t) => {
@@ -27,7 +30,7 @@ test('mongoose.Schema.Types now has an "Imei" type', (t) => {
 
 test('throws an error when given invalid IMEI', async (t) => {
   const Model = new SampleModel({ imei: '123' });
-  const error = await t.throws(Model.save());
+  const error = await t.throwsAsync(() => Model.save());
   t.is(error.errors.imei.name, 'ValidatorError');
   t.is(error.errors.imei.message, 'IMEI is invalid');
 });
