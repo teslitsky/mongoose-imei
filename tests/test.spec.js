@@ -11,6 +11,8 @@ const { Imei } = Schema.Types;
 const SampleSchema = new Schema({ imei: { type: Imei } });
 const SampleModel = mongoose.model('Sample', SampleSchema);
 
+jest.setTimeout(60000);
+
 describe('Mongoose IMEI', () => {
   beforeAll(async () => {
     await mockgoose.prepareStorage();
