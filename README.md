@@ -17,7 +17,7 @@ const Schema = mongoose.Schema;
 imei.loadType(mongoose);
 
 const PhoneSchema = new Schema({
-  phone: { type: Schema.Types.Imei }
+  phone: { type: Schema.Types.Imei },
 });
 
 const PhoneModel = mongoose.model('Phone', PhoneSchema);

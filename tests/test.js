@@ -17,22 +17,22 @@ test.before(async () => {
   await mongoose.connect('mongodb://localhost/test');
 });
 
-test('loadType() function exists', t => {
+test('loadType() function exists', (t) => {
   t.is(typeof ImeiModule.loadType, 'function');
 });
 
-test('mongoose.Schema.Types now has an "Imei" type', t => {
+test('mongoose.Schema.Types now has an "Imei" type', (t) => {
   t.is(Object.prototype.hasOwnProperty.call(Schema.Types, 'Imei'), true);
 });
 
-test('throws an error when given invalid IMEI', async t => {
+test('throws an error when given invalid IMEI', async (t) => {
   const Model = new SampleModel({ imei: '123' });
   const error = await t.throws(Model.save());
   t.is(error.errors.imei.name, 'ValidatorError');
   t.is(error.errors.imei.message, 'IMEI is invalid');
 });
 
-test('stores the proper IMEI value without any validation errors', async t => {
+test('stores the proper IMEI value without any validation errors', async (t) => {
   const imei = '351680077319519';
   const Model = new SampleModel({ imei });
   const result = await Model.save();
