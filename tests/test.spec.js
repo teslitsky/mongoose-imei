@@ -1,17 +1,18 @@
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const mongoose = require('mongoose');
-const ImeiModule = require('../index.js');
+const ImeiModule = require('../index');
 
 const { Schema } = mongoose;
 
 jest.setTimeout(30000);
 
-const mongod = new MongoMemoryServer();
+let mongod;
 let SampleModel;
 
 describe('Mongoose IMEI', () => {
   beforeAll(async () => {
-    const uri = await mongod.getUri();
+    mongod = await MongoMemoryServer.create();
+    const uri = mongod.getUri();
 
     await mongoose.connect(uri, {
       useNewUrlParser: true,
