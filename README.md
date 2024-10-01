@@ -2,11 +2,11 @@
 
 [![Build Status](https://travis-ci.org/teslitsky/mongoose-imei.svg?branch=master)](https://travis-ci.org/teslitsky/mongoose-imei)
 
-Gives you the `Imei` type to use in your schemas, complete with validation using [node-imei](https://github.com/B2MSolutions/node-imei) library. https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity
+Gives you the `Imei` type to use in your schemas, complete with validation using [node-imei](https://www.npmjs.com/package/node-imei) library. https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity
 
 ## Usage
 
-Start with an `npm install --save mongoose-imei`
+Start with an `npm install mongoose-imei`
 
 ```javascript
 const mongoose = require('mongoose');

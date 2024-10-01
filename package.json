@@ -4,7 +4,8 @@
   "description": "Mongoose type for IMEI",
   "main": "index.js",
   "scripts": {
-    "test": "jest tests/*.spec.js"
+    "test": "jest tests/*.spec.js",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -26,27 +27,13 @@
     "url": "https://github.com/teslitsky/mongoose-imei/issues"
   },
   "homepage": "https://github.com/teslitsky/mongoose-imei#readme",
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true,
-      "jest": true
-    },
-    "extends": [
-      "airbnb-base",
-      "prettier"
-    ]
-  },
-  "prettier": {
-    "trailingComma": "all",
-    "singleQuote": true
-  },
   "devDependencies": {
+    "@eslint/js": "9.11.1",
     "@types/jest": "29.5.13",
-    "eslint": "8.26.0",
-    "eslint-config-airbnb-base": "15.0.0",
+    "eslint": "9.11.1",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-import": "2.30.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "globals": "15.9.0",
     "jest": "29.7.0",
     "mongodb-memory-server": "10.0.1",
     "mongoose": "8.7.0",
