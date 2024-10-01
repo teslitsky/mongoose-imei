@@ -42,15 +42,15 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@types/jest": "29.2.0",
+    "@types/jest": "29.5.13",
     "eslint": "8.26.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-import": "2.26.0",
-    "jest": "29.2.2",
-    "mongodb-memory-server": "8.9.3",
-    "mongoose": "6.7.0",
-    "prettier": "2.7.1"
+    "eslint-plugin-import": "2.30.0",
+    "jest": "29.7.0",
+    "mongodb-memory-server": "10.0.1",
+    "mongoose": "8.7.0",
+    "prettier": "3.3.3"
   },
   "dependencies": {
     "node-imei": "1.0.8"
