@@ -41,9 +41,6 @@
     "trailingComma": "all",
     "singleQuote": true
   },
-  "dependencies": {
-    "imei": "0.0.1"
-  },
   "devDependencies": {
     "@types/jest": "29.2.0",
     "eslint": "8.26.0",
@@ -54,5 +51,8 @@
     "mongodb-memory-server": "8.9.3",
     "mongoose": "6.7.0",
     "prettier": "2.7.1"
+  },
+  "dependencies": {
+    "node-imei": "1.0.8"
   }
 }
