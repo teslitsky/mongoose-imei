@@ -1,6 +1,6 @@
 {
   "name": "mongoose-imei",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Mongoose type for IMEI",
   "main": "index.js",
   "scripts": {
