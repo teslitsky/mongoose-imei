@@ -1,5 +1,6 @@
 name: Publish Package to npmjs
 on:
+  workflow_dispatch:
   release:
     types: [ created ]
 jobs:
@@ -26,6 +27,6 @@ jobs:
           node-version: 22
           registry-url: https://registry.npmjs.org/
       - run: npm i
-      - run: npm publish --provenance --access public
+      - run: npm publish --provenance --access public --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
