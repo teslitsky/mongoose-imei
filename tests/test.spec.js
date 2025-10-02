@@ -35,7 +35,7 @@ describe('Mongoose IMEI', () => {
 
   it('should throws an error when given invalid IMEI', async () => {
     const sampleModel = new SampleModel({ imei: '123' });
-    await expect(sampleModel.save()).rejects.toThrowError('IMEI is invalid');
+    await expect(sampleModel.save()).rejects.toThrow('IMEI is invalid');
   });
 
   it('should stores the proper IMEI value without any validation errors', async () => {
