@@ -18,8 +18,7 @@
   "files": [
     "README.md",
     "index.js",
-    "lib",
-    "test"
+    "lib"
   ],
   "author": "Dmitry Teslitsky <dmitryteslitsky@gmail.com>",
   "license": "MIT",
@@ -28,12 +27,12 @@
   },
   "homepage": "https://github.com/teslitsky/mongoose-imei#readme",
   "devDependencies": {
-    "@eslint/js": "9.36.0",
-    "eslint": "9.36.0",
-    "eslint-config-prettier": "8.5.0",
+    "@eslint/js": "9.37.0",
+    "eslint": "9.37.0",
+    "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.4",
     "globals": "16.4.0",
-    "mongodb-memory-server": "10.2.1",
+    "mongodb-memory-server": "10.2.2",
     "mongoose": "8.19.0",
     "prettier": "3.6.2"
   },
