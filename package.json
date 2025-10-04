@@ -4,7 +4,7 @@
   "description": "Mongoose type for IMEI",
   "main": "index.js",
   "scripts": {
-    "test": "jest tests/*.spec.js",
+    "test": "node --test tests/*.spec.js",
     "lint": "eslint"
   },
   "repository": {
@@ -29,12 +29,10 @@
   "homepage": "https://github.com/teslitsky/mongoose-imei#readme",
   "devDependencies": {
     "@eslint/js": "9.36.0",
-    "@types/jest": "30.0.0",
     "eslint": "9.36.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "5.5.4",
     "globals": "16.4.0",
-    "jest": "30.2.0",
     "mongodb-memory-server": "10.2.1",
     "mongoose": "8.19.0",
     "prettier": "3.6.2"
