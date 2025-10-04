@@ -18,8 +18,7 @@
   "files": [
     "README.md",
     "index.js",
-    "lib",
-    "test"
+    "lib"
   ],
   "author": "Dmitry Teslitsky <dmitryteslitsky@gmail.com>",
   "license": "MIT",
