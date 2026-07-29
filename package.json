@@ -33,7 +33,7 @@
     "eslint-plugin-prettier": "5.5.4",
     "globals": "16.4.0",
     "mongodb-memory-server": "10.2.2",
-    "mongoose": "8.19.0",
+    "mongoose": "8.24.1",
     "prettier": "3.6.2"
   },
   "dependencies": {
